@@ -1,0 +1,75 @@
+@import "base.scss";
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.5);
+
+    img {
+      width: 100%;
+    }
+
+    h1 {
+      color: #f25f5c;
+    }
+  }
+
+  .right {
+    padding-top: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .content {
+    .split {
+      height: 100%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    .left {
+      left: 0;
+      width: 25%;
+      border-right: 1px solid rgba($color: #000000, $alpha: 0.5);
+
+      .centered {
+        position: absolute;
+        top: 50%;
+        transform: translate(0%, -50%);
+
+        padding: 12px;
+
+        .lc {
+          display: flex;
+          flex-direction: column;
+
+          img {
+            width: 100%;
+          }
+
+          h1 {
+            color: #f25f5c;
+          }
+        }
+      }
+    }
+
+    .right {
+      right: 0;
+      width: 75%;
+
+      .rc {
+        padding: 12px;
+
+        width: 100%;
+      }
+    }
+  }
+}

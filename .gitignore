@@ -1,0 +1,4 @@
+node_modules/
+_test*.js
+_test.txt
+.env

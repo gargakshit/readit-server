@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Readit - <%= title %></title>
+    <link rel="stylesheet" href="./static/css/article.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="split left">
+        <div class="centered">
+          <div class="lc">
+            <h1>Readit.</h1>
+            <img src="<%= img %>" alt="<%= title %>" />
+            <h3><%= title %></h3>
+          </div>
+        </div>
+      </div>
+      <div class="split right">
+        <div class="rc">
+          <%- content %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
