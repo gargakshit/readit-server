@@ -14,16 +14,20 @@ router.get("/", (req, res) => {
 router.get("/article", async (req, res) => {
   const { url } = req.query;
 
-  const article = await getArticle(url);
-
-  if (article.error === 0) {
-    res.render("article", {
-      title: article.data.title,
-      content: article.data.content,
-      img: article.data.image
-    });
+  if (url == null) {
+    res.status(500).send("URL not specified!");
   } else {
-    res.status(500).send("Error Extracting Article!");
+    const article = await getArticle(url);
+
+    if (article.error === 0) {
+      res.render("article", {
+        title: article.data.title,
+        content: article.data.content,
+        img: article.data.image
+      });
+    } else {
+      res.status(500).send("Error Extracting Article!");
+    }
   }
 });
 
