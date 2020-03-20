@@ -23,7 +23,8 @@ router.get("/article", async (req, res) => {
       res.render("article", {
         title: article.data.title,
         content: article.data.content,
-        img: article.data.image
+        img: article.data.image,
+        ttr: Math.ceil(article.data.ttr / 60)
       });
     } else {
       res.status(500).send("Error Extracting Article!");
